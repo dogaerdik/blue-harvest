@@ -1,6 +1,11 @@
 # Doğa Erdik Blue-Harvest Assignment
 This project developed for blue-harvest assignment.
 
+###Requirements
+- JDK 1.8+
+- Maven
+
+
 ### Architecture
 The system designed with 2 microservices. Repository Pattern has been used. Hbernate, JPA Data, Junit, Spring Boot, h2-database and Swagger-ui  used for project.  
 
@@ -13,6 +18,7 @@ Account microservices also has  3 end-points. /account end point saves account i
 
 
 ### Running the Application
+Docker installation is required. You can download and install docker from here https://docs.docker.com/desktop/windows/install/ 
 
 Docker images are published on docker dockerhub.
 
@@ -22,10 +28,15 @@ https://hub.docker.com/repository/docker/dogaerdik/account
 
 
 1. Download and run docker images from dockerhub
+
+Download and run account microservice on docker 
+```
+$ docker run -d --name account -p 8882:8882 dogaerdik/account:0.0.1
+```
+
+Download and run transaction microservice on docker
 ```
 $ docker run -d --name transaction -p 8889:8889 dogaerdik/transaction:0.0.1
-
-$ docker run -d --name account -p 8882:8882 dogaerdik/account:0.0.1
 ```
 ![img_2.png](img_2.png)
 ### Running the Source Code
